@@ -2,20 +2,20 @@
     <div class="choose-type">
         <p class="text-choose-type">Choose Type</p>
     </div>
-    <div  fxLayout="row" fxLayoutAlign="center center" class="cards" >
-        <mat-card (mouseover)="scale = true" (mouseout)="scale = false" class="scale-card" >
-            <img [src]=" scale === true ? 'assets/Scale.png' : 'assets/Scale-Disabled.png' " alt="scale" class="image">
-            <p fxLayoutAlign="center end" class="text LENGTH">Length</p>
+    <div  fxLayout="row" fxLayout-xs="row" fxLayoutAlign="center center" class="cards" >
+        <mat-card fxLayout-xs="row" (mouseover)="scale = true" (mouseout)="lengthOut()" [ngClass]="[length]" (click)="onLength()" class="scale-card" >
+            <img [src]=" scale === true ? 'assets/Scale.png' : 'assets/Scale-Disabled.png' " alt="scale" class="image LENGTHIMG">
+            <p fxLayout-xs="row" fxLayoutAlign="center end" class="text LENGTH">Length</p>
         </mat-card>
 
-        <mat-card (mouseover)="temperature = true" (mouseout)="temperature = false" class="temperature-card">
-            <img [src]="temperature === true ? 'assets/Temperature.png' : 'assets/Temperature-Disabled.png'" alt="temperature" class="image">
-            <p fxLayoutAlign="center center" class="text TEMPERATURE">Temperature</p>
+        <mat-card (mouseover)="temperature = true" (mouseout)="temperatureOut()" [ngClass]="[temp]" (click)="onTemperature()" class="temperature-card">
+            <img [src]="temperature === true ? 'assets/Temperature.png' : 'assets/Temperature-Disabled.png'" alt="temperature" class="image TEMPIMG">
+            <p fxLayout-xs="row" fxLayoutAlign="center center" class="text TEMPERATURE">Temperature</p>
         </mat-card>
 
-        <mat-card (mouseover)="volume = true" (mouseout)="volume = false" class="volume-card"> 
-            <img [src]="volume === true ? 'assets/Volume.png' : 'assets/Volume-Disabled.png'" alt="volume" class="image"> 
-            <p fxLayoutAlign="center center" class="text VOLUME">Volume</p>
+        <mat-card (mouseover)="volume = true" (mouseout)="volumeOut()" [ngClass]="[vol]" (click)="onVolume()" class="volume-card"> 
+            <img [src]="volume === true ? 'assets/Volume.png' : 'assets/Volume-Disabled.png'" alt="volume" class="image VOLIMG"> 
+            <p fxLayout-xs="row" fxLayoutAlign="center center" class="text VOLUME">Volume</p>
         </mat-card>
     </div>
 </div>
