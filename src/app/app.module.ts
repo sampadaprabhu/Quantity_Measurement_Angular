@@ -12,6 +12,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { MainComponent } from './components/main/main.component';
+import { HttpServiceService} from './service/HttpService/http-service.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { MainComponent } from './components/main/main.component';
     MatCardModule,
     MatFormFieldModule,
     MatSelectModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpServiceService,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

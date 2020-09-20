@@ -35,7 +35,7 @@ export class ChooseTypeComponent implements OnInit {
       this.changeLengthImage=true;
       this.changeTemperatureImage=false;
       this.changeVolumeImage=false;
-      this.quantityTypeUnit=['Foot', 'Kilometer', 'Meter', 'Milimeter', 'Inch'];
+      this.quantityTypeUnit=['FEET', 'INCH', 'YARD', 'CENTIMETER'];
       this.input=1;
       this.output=12;
     }
@@ -66,7 +66,7 @@ export class ChooseTypeComponent implements OnInit {
       this.changeTemperatureImage=true;
       this.changeLengthImage=false;
       this.changeVolumeImage=false;
-      this.quantityTypeUnit=['Celsius', 'Fahrenheit'];
+      this.quantityTypeUnit=['CELSIUS', 'FAHRENHEIT'];
       this.input=0;
       this.output=32;
     }
@@ -97,7 +97,7 @@ export class ChooseTypeComponent implements OnInit {
       this.changeVolumeImage=true;
       this.changeLengthImage=false;
       this.changeTemperatureImage=false;
-      this.quantityTypeUnit=['Litre', 'Mililitre','Gallon'];
+      this.quantityTypeUnit=['LITRE', 'ML','GALLON'];
       this.input=1;
       this.output=1000;
     }
