@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-conversion',
@@ -9,7 +9,9 @@ export class ConversionComponent implements OnInit {
 
   constructor() { }
 
-  selected = 'meter';
+  @Input() quantityTypeUnit:any[];
+  @Input() input:number;
+  @Input() output:number;
 
   ngOnInit(): void {
   }

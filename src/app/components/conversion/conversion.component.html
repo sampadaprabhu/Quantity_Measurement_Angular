@@ -2,24 +2,21 @@
     <div fxLayout="row" fxLayoutAlign="space-evenly center" class="conversion" >
         <div fxLayout="column">
             <p class="from">From</p>
-            <input type="number" value="1" class="input-value" />
+            <input type="number" [value]="input" class="input-value" />
             <select matNativeControl required class="select">
-              <option value="foot">Foot</option>
-              <option value="kilometer">kilometer</option>
-              <option value="meter">Metre</option>
-              <option value="Milimeter">Milimeter</option>
-              <option value="inch">Inch</option>
+              <option *ngFor="let quantityTypeUnit of quantityTypeUnit">
+                {{ quantityTypeUnit }}
+              </option>
+              
             </select>
           </div>
           <div fxLayout="column">
             <p class="to">To</p>
-            <input type="number" value="1" class="input-value" />
+            <input type="number" [value]="output" class="input-value" />
             <select matNativeControl required class="select">
-              <option value="foot">Foot</option>
-              <option value="kilometer">kilometer</option>
-              <option value="meter">Metre</option>
-              <option value="Milimeter">Milimeter</option>
-              <option value="inch">Inch</option>
+              <option *ngFor="let quantityTypeUnit of quantityTypeUnit" [selected]="i==1">
+                {{ quantityTypeUnit }}
+              </option>
             </select>
           </div>
     </div>
