@@ -23,10 +23,12 @@ export class ChooseTypeComponent implements OnInit {
   quantityTypeUnit=[];
   input=0;
   output=0;
+  primaryUnit: string;
 
-  onLength(): void{
+  onLength(unit): void{
     if(this.length === 'mat-card') 
     {
+      this.primaryUnit=unit;
       this.length='mat-card scale-card HOLD-LENGTH';
       this.temp='mat-card';
       this.vol='mat-card';
@@ -36,7 +38,7 @@ export class ChooseTypeComponent implements OnInit {
       this.changeTemperatureImage=false;
       this.changeVolumeImage=false;
       this.quantityTypeUnit=['FEET', 'INCH', 'YARD', 'CENTIMETER'];
-      this.input=1;
+      this.input=0;
       this.output=12;
     }
     else{
@@ -55,9 +57,10 @@ export class ChooseTypeComponent implements OnInit {
     }
   }
 
-  onTemperature(): void{
+  onTemperature(unit): void{
     if(this.temp === 'mat-card')
     {
+      this.primaryUnit=unit;
       this.temp='mat-card temperature-card HOLD-TEMP';
       this.length='mat-card';
       this.vol='mat-card';
@@ -86,9 +89,10 @@ export class ChooseTypeComponent implements OnInit {
     }
   }
 
-  onVolume(): void{
+  onVolume(unit): void{
     if(this.vol === 'mat-card')
     {
+      this.primaryUnit=unit;
       this.vol='mat-card volume-card HOLD-VOL';
       this.length='mat-card';
       this.temp='mat-card';
@@ -98,7 +102,7 @@ export class ChooseTypeComponent implements OnInit {
       this.changeLengthImage=false;
       this.changeTemperatureImage=false;
       this.quantityTypeUnit=['LITRE', 'ML','GALLON'];
-      this.input=1;
+      this.input=0;
       this.output=1000;
     }
     else{
