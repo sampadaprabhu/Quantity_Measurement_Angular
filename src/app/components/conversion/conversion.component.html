@@ -1,23 +1,24 @@
-<div>
-    <div fxLayout="row" fxLayoutAlign="space-evenly center" class="conversion" >
-        <div fxLayout="column">
+<!-- <div class="main"> -->
+  <div fxLayout="column" fxLayoutAlign.xs="center center" class="conversion">
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutGap.xs="10px" fxLayoutAlign="space-between center">
+        <div fxLayout="column" fxFlex=50>
             <p class="from">From</p>
-            <input type="number" [value]="input" class="input-value" />
-            <select matNativeControl required class="select">
-              <option *ngFor="let quantityTypeUnit of quantityTypeUnit">
-                {{ quantityTypeUnit }}
-              </option>
-              
-            </select>
+              <input type="number" [value]="input" class="input-value" (keyup)="convertedValue($event)" />
+              <select matNativeControl required class="select" (click)="quantityUnitOne($event)">
+                <option *ngFor="let quantityTypeUnit of quantityTypeUnit">
+                  {{ quantityTypeUnit }}
+                </option>
+              </select>
           </div>
-          <div fxLayout="column">
-            <p class="to">To</p>
-            <input type="number" [value]="output" class="input-value" />
-            <select matNativeControl required class="select">
-              <option *ngFor="let quantityTypeUnit of quantityTypeUnit" [selected]="i==1">
-                {{ quantityTypeUnit }}
-              </option>
-            </select>
+        <div fxLayout="column" fxFlex=50 fxFlexOffset=5>
+                <p class="to">To</p>
+                <input type="number" [value]="finalOutput" class="input-value" />
+                <select matNativeControl required class="select" (click)="quantityUnitTwo($event)">
+                  <option *ngFor="let quantityTypeUnit of quantityTypeUnit" [selected]="i==1">
+                    {{ quantityTypeUnit }}
+                  </option>
+                </select>
           </div>
-    </div>
-</div>
+      </div>
+  </div>
+<!-- </div> -->
