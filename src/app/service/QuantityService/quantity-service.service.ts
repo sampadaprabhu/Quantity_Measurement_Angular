@@ -11,6 +11,7 @@ export class QuantityServiceService {
   constructor(private httpService:HttpServiceService) { }
 
   convertedValues(data){
-    return this.httpService.postService(data,this.baseUrl+'unit/conversion');
+    console.log(data);
+    return this.httpService.postService(data,this.baseUrl+'/ConvertedValue');
   }
 }

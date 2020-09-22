@@ -10,6 +10,6 @@ export class HttpServiceService {
   constructor(private httpClient:HttpClient) { }
 
   postService(data, url: string){
-    return this.httpClient.post(data,url);
+    return this.httpClient.post(url,data);
   }
 }
